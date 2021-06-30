@@ -1,0 +1,11 @@
+docker container run -d nginx
+
+docker container run -d nginx
+
+docker container run -d nginx
+
+docker container stop infallible_wing
+
+docker container stop bold_blackwell
+
+docker ps -a
