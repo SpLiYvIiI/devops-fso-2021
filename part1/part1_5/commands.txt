@@ -1,0 +1,13 @@
+docker pull devopsdockeruh/simple-web-service:alpine
+
+docker pull devopsdockeruh/simple-web-service:ubuntu
+
+docker image ls
+
+docker run fd312adc88e0
+
+docker exec -it silly_driscoll sh
+
+tail -f ./text.log
+
+exit
