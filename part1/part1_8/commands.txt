@@ -1,0 +1,7 @@
+docker build . -t curler
+
+docker run -it -d curler
+
+docker attach busy_cannon
+
+helsinki.fi
