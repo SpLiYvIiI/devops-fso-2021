@@ -1,0 +1,15 @@
+docker run -d --rm -it ubuntu sh -c 'echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website;'
+
+docker exec -it great_panini bash
+
+apt update
+
+apt install curl
+
+y
+
+exit
+
+docker attach great_panini
+
+helsinki.fi

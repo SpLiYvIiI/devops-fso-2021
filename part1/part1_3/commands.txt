@@ -1,0 +1,5 @@
+docker container run devopsdockeruh/simple-web-service:ubuntu
+
+docker exec -it elastic_maxwell bash
+
+tail -f ./text.log
