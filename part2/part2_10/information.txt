@@ -1,0 +1,9 @@
+I basically changed frontend/backend image environment variables
+
+from REACT_APP_BACKEND_URL=http://localhost:8080
+
+to     REACT_APP_BACKEND_URL=http://localhost:8000/api
+
+from REQUEST_ORIGIN=http://localhost:5000
+
+to     REQUEST_ORIGIN=http://localhost:8000

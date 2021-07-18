@@ -1,0 +1,30 @@
+version: '3.5'
+
+services:
+  db:
+    image: postgres:13.2-alpine
+    restart: unless-stopped
+    container_name: postgres
+    environment: 
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DATABASE: postgres
+    volumes:
+      - database:/var/lib/postgresql/data
+  redis:
+    image: redis
+  frontend:
+    image: image-frontend
+    ports:
+      - 5000:5000   
+  backend:
+    image: image-backend
+    ports: 
+      - 8080:8080
+    environment:
+      - REDIS_HOST=redis
+      - POSTGRES_HOST=postgres
+    restart: unless-stopped
+    
+volumes:
+    database:
