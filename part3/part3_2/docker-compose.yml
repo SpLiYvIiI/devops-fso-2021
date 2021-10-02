@@ -1,9 +1,0 @@
-version: '3.5'
-
-services:
-  custom-ci-cd:
-    image: customcicd
-    privileged: true
-    container_name: check
-    volumes:
-       - /var/run/docker.sock:/var/run/docker.sock

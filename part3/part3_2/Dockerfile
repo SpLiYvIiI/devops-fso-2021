@@ -6,6 +6,6 @@ COPY racxa.sh .
 
 RUN apt-get update && apt-get install docker.io -y && apt-get install -y git
 
-RUN chmod +x ./racxa.sh
+RUN chmod +x racxa.sh
 
-ENTRYPOINT ["sh","./racxa.sh"]
+ENTRYPOINT ["bash","./racxa.sh"]
