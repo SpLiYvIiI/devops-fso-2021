@@ -1,0 +1,17 @@
+FROM golang:1.16
+
+EXPOSE 8080
+
+WORKDIR /backend/all
+
+COPY /example-backend .
+
+ENV REQUEST_ORIGIN=http://localhost:8000
+
+RUN go build && ls && mv server .. && \
+    rm -r * && ls && useradd -m client \
+    && chown client: /backend && chmod 700 /backend
+
+USER client
+
+CMD .././server
