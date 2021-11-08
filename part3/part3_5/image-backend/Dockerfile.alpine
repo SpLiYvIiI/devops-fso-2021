@@ -13,4 +13,4 @@ RUN go build && adduser -S client \
 
 USER client
 
-CMD .././server
+CMD ./server

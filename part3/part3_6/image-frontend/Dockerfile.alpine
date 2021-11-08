@@ -1,0 +1,24 @@
+FROM node:16-alpine3.13 as build
+
+WORKDIR /devapp
+
+COPY /example-frontend .
+
+RUN npm install && REACT_APP_BACKEND_URL=http://localhost:8000/api npm run build
+
+FROM node:16-alpine3.11
+
+EXPOSE 5000
+
+WORKDIR /prodapp
+
+RUN mkdir build
+
+COPY --from=build ./devapp/build ./build
+
+RUN npm install -g serve && adduser -S client &&  \
+    chown client: /prodapp && chmod 700 /prodapp 
+
+USER client
+
+CMD serve -s -l 5000 build
