@@ -1,0 +1,16 @@
+FROM golang:1.17.2-alpine3.14
+
+EXPOSE 8080
+
+WORKDIR /backend/all
+
+COPY /example-backend .
+
+ENV REQUEST_ORIGIN=http://localhost:8000
+
+RUN go build && adduser -S client \
+    && chown client: /backend && chmod 700 /backend
+
+USER client
+
+CMD ./server
